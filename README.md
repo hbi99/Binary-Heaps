@@ -58,6 +58,7 @@ console.log( 'Lowest element in array using Binary Heap: '+ heap.pop() +' ('+ ( 
 ```
 
 ### Benchmark 2 - 1.000.000 rows of three dimensional arrays
+Push single element and get the lowest element from array/heap
 ```javascript
 var arr = [],
 	heap = binaryHeap(),
@@ -74,12 +75,14 @@ for (; i<il; i++) {
 
 // Benchmark: Javascript built-in sort-method
 start_time = Date.now();
+arr.push(el);
 arr.sort();
 console.log( 'Lowest element in array using JS sort: '+ arr[0] +' ('+ ( Date.now() - start_time ) +'ms)');
-// ~1211ms
+// ~1304ms
 
 // Benchmark: Binary Heap
 start_time = Date.now();
+heap.push(el);
 console.log( 'Lowest element in array using Binary Heap: '+ heap.pop() +' ('+ ( Date.now() - start_time ) +'ms)');
 // ~2ms
 ```
