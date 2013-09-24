@@ -48,12 +48,12 @@ for (; i<il; i++) {
 // Benchmark: Javascript built-in sort-method
 start_time = Date.now();
 arr.sort(function(a,b){return a - b});
-console.log( 'Lowest element in array using JS sort: '+ arr[0] +' ('+ ( Date.now() - start_time ) +'ms)');
+console.log( '1st element in array using JS sort: '+ arr[0] +' ('+ ( Date.now() - start_time ) +'ms)');
 // ~158ms
 
 // Benchmark: Binary Heap
 start_time = Date.now();
-console.log( 'Lowest element in array using Binary Heap: '+ heap.pop() +' ('+ ( Date.now() - start_time ) +'ms)');
+console.log( '1st element in array using Binary Heap: '+ heap.pop() +' ('+ ( Date.now() - start_time ) +'ms)');
 // ~1ms
 ```
 
@@ -73,17 +73,20 @@ for (; i<il; i++) {
 	heap.push( el );
 }
 
+// create an element that we know will be sorted first in array
+el = [1,1,1];
+
 // Benchmark: Javascript built-in sort-method
 start_time = Date.now();
 arr.push(el);
 arr.sort();
-console.log( 'Lowest element in array using JS sort: '+ arr[0] +' ('+ ( Date.now() - start_time ) +'ms)');
+console.log( '1st node in array using JS sort: '+ arr[0] +' ('+ ( Date.now() - start_time ) +'ms)');
 // ~1304ms
 
 // Benchmark: Binary Heap
 start_time = Date.now();
 heap.push(el);
-console.log( 'Lowest element in array using Binary Heap: '+ heap.pop() +' ('+ ( Date.now() - start_time ) +'ms)');
+console.log( '1st node in array using Binary Heap: '+ heap.pop() +' ('+ ( Date.now() - start_time ) +'ms)');
 // ~2ms
 ```
 
