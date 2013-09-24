@@ -1,3 +1,7 @@
+/*
+ * Modifiad version of Binary Heap, written by Marijn Haverbeke
+ * http://eloquentjavascript.net/appendix2.html
+ */
 
 var binaryHeap = (function (r, fn) {
 	'Use strict';
