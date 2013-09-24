@@ -57,5 +57,30 @@ console.log( 'Lowest element in array using Binary Heap: '+ heap.pop() +' ('+ ( 
 // ~1ms
 ```
 
+### Benchmark 2 - 1.000.000 rows of three dimensional arrays
+```javascript
+var arr = [],
+	heap = binaryHeap(),
+	start_time,
+	el,
+	i=0,
+	il=1000000;
 
+for (; i<il; i++) {
+	el = [ Math.ceil(Math.random() * il)+1, Math.ceil(Math.random() * il)+1, Math.ceil(Math.random() * il)+1 ];
+	arr.push( el );
+	heap.push( el );
+}
+
+// Benchmark: Javascript built-in sort-method
+start_time = Date.now();
+arr.sort();
+console.log( 'Lowest element in array using JS sort: '+ arr[0] +' ('+ ( Date.now() - start_time ) +'ms)');
+// ~1211ms
+
+// Benchmark: Binary Heap
+start_time = Date.now();
+console.log( 'Lowest element in array using Binary Heap: '+ heap.pop() +' ('+ ( Date.now() - start_time ) +'ms)');
+// ~2ms
+```
 
