@@ -5,6 +5,7 @@ Very fast alternative to array sort for Javascript
 
 ## Sample Usage
 
+```html
 <script type='text/javascript' src='binary_heap.js'></script>
 <script type='text/javascript'>
   // create a heap
@@ -16,4 +17,4 @@ Very fast alternative to array sort for Javascript
   while (heap.size() > 0) {
   	console.log( heap.pop() );
   }
-</script>
+</script>```
