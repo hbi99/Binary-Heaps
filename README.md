@@ -30,28 +30,32 @@ var heap = binaryHeap([
 console.log( heap.pop() );
 ```
 
-### Benchmark
+### Benchmark 1 - 1.000.000 integers in array
 ```javascript
 var arr = [],
-    heap = binaryHeap(),
-    start_time;
+	heap = binaryHeap(),
+	start_time,
+	el,
+	i=0,
+	il=1000000;
 
-for (var i=0, il=1000000; i<il; i++) {
-    el = Math.ceil(Math.random() * il)+1;
-    arr.push( el );
-    heap.push( el );
+for (; i<il; i++) {
+	el = Math.ceil(Math.random() * il)+1;
+	arr.push( el );
+	heap.push( el );
 }
 
 // Benchmark: Javascript built-in sort-method
 start_time = Date.now();
 arr.sort(function(a,b){return a - b});
-console.log( 'lowest element in array: '+ arr[0] );
-console.log( 'Built-in sort: '+ ( Date.now() - start_time ) +'ms' );
-// ~174ms
+console.log( 'Lowest element in array using JS sort: '+ arr[0] +' ('+ ( Date.now() - start_time ) +'ms)');
+// ~158ms
 
 // Benchmark: Binary Heap
 start_time = Date.now();
-console.log( heap.pop() );
-console.log( 'Heap sort: '+ ( Date.now() - start_time ) +'ms' );
-// 2ms
+console.log( 'Lowest element in array using Binary Heap: '+ heap.pop() +' ('+ ( Date.now() - start_time ) +'ms)');
+// ~1ms
 ```
+
+
+
